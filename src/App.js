@@ -34,7 +34,7 @@ const income = _.cloneDeep(this.state.income)
 const efkarate = _.cloneDeep(this.state.efkaRate)
 const visible = _.cloneDeep(this.state.visible)
   this.setState({
-    efka : income<=580 ? _.floor(580*efkarate,2) : _.floor(visible*efkarate,2),
+    efka : income<=586 ? _.floor(586*efkarate,2) : _.floor(visible*efkarate,2),
     calcEfkaOk : true
   });
 }
@@ -45,7 +45,7 @@ calculateTaxes = () => {
   const efka = _.cloneDeep(this.state.efka)
   const taxrate = _.cloneDeep(this.state.taxRate)
     this.setState({
-      taxes : income<=580 ? _.floor((income-efka)*taxrate,2) : _.floor((visible-efka)*taxrate,2),
+      taxes : income<=586 ? _.floor((income-efka)*taxrate,2) : _.floor((visible-efka)*taxrate,2),
       beforeNet : _.floor(income-efka,2),
       calcTaxesOk : true
     });
@@ -84,18 +84,18 @@ resetAll = () => {
 
 
   handleChangeIncome = (event) => {
-    if (event.target.value<580) {
+    if (event.target.value<586) {
     this.setState({
       income : event.target.value,
       disabled : true,
-      visible : 580
+      visible : 586
     });
   }
   else{
     this.setState({
       income : event.target.value,
       disabled : false,
-      visible : 580
+      visible : 586
     });
   }
   }
@@ -123,7 +123,7 @@ render() {
   return (
           <div className="row" style={{"backgroundColor":"#f1d7f8"}}>
             <div className="col-lg-8">
-            <h4> Please insert your Income and Visible money (for income 580+ only) :</h4>
+            <h4> Please insert your Income and Visible money (for income 586+ only) :</h4>
 
             <label className="col-lg-2"> Income : </label>
 
