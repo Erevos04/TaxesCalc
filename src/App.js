@@ -148,9 +148,9 @@ render() {
 
               <button className="k-button k-default" onClick={this.calculateEfka}>Calculate Efka</button>
 
-              <button className="k-button k-primary" onClick={this.calculateTaxes}>Calculate Taxes</button>
+              <button className="k-button k-primary" disabled={!this.state.calcEfkaOk} onClick={this.calculateTaxes}>Calculate Taxes</button>
 
-              <button className="k-button k-default" onClick={this.calculateTotals}>Calculate Totals</button>
+              <button className="k-button k-default" disabled={!this.state.calcTaxesOk}onClick={this.calculateTotals}>Calculate Totals</button>
 
             </div>
               : null}
